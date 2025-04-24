@@ -6,10 +6,29 @@ using System.Linq.Expressions;
 
 public class Program
 {
-    // a vida é boa
+  
     
     static void Main(string[] args)
     {
+        /*try
+        {
+            Console.WriteLine("Digite o primeiro numero");
+            int a = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Digite o primeiro numero");
+            int b = Convert.ToInt32(Console.ReadLine());
+
+            int resultado = a / b;
+            Console.WriteLine($"Resultado: {resultado}");
+        }
+        catch (DivideByZeroException ex)
+        {
+            Console.WriteLine("Divisão por Zero!");
+        }
+        catch (Exception ex)
+        {
+            Console.WriteLine("Ocorreu um erro!" + ex.Message);
+        }*/
+
         List<ContaBancaria> lista = new List<ContaBancaria>();
         while (true)
         {
@@ -37,14 +56,8 @@ public class Program
                 }
             }
         }
-
-
-        /*
-
-
-       
-
-        
+               
+                
         /*ContaBancaria cb1 = new ContaBancaria();
         Console.WriteLine("Digite o valor do id");
         cb1._id = Convert.ToInt32(Console.ReadLine());
