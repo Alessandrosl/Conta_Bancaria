@@ -6,6 +6,7 @@ using System.Linq.Expressions;
 
 public class Program
 {
+    // a vida é boa
     
     static void Main(string[] args)
     {
