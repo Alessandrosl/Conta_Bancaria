@@ -1,15 +1,66 @@
 ﻿
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq.Expressions;
 
 public class Program
 {
+    
     static void Main(string[] args)
     {
-        ContaBancaria cb1 = new ContaBancaria();
+        List<ContaBancaria> lista = new List<ContaBancaria>();
+        while (true)
+        {
+            Console.WriteLine("Digite 1 para cadastrar nova conta e 2 para listar todas");
+            int ops = Convert.ToInt32(Console.ReadLine());
+            if(ops == 1)
+            {
+                ContaBancaria cb1 = new ContaBancaria();
+                Console.WriteLine("Digite o id");
+                cb1._id = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Digite a Agencia");
+                cb1._agencia = Console.ReadLine();
+                Console.WriteLine("Digite o Numero da Conta");
+                cb1._Nconta = Console.ReadLine();
+                Console.WriteLine("Digite o Nome do Correntista");
+                cb1._nomeCorrentista = Console.ReadLine();
+                cb1._saldo = 0;
+                lista.Add(cb1);
+            }
+            else if(ops == 2)
+            {
+                foreach(ContaBancaria cb in lista)
+                {
+                    Console.WriteLine(cb._agencia + ", "+ cb._Nconta + ", " + cb._nomeCorrentista + ", " + cb._saldo);
+                }
+            }
+        }
+
+
+        /*
+
+
+       
+
+        
+        /*ContaBancaria cb1 = new ContaBancaria();
+        Console.WriteLine("Digite o valor do id");
         cb1._id = Convert.ToInt32(Console.ReadLine());
+        Console.WriteLine("Digite o valor do Agencia");
         cb1._agencia = Console.ReadLine();
+        Console.WriteLine("Digite o valor do Numero da Conta");
         cb1._Nconta = Console.ReadLine();
+        Console.WriteLine("Digite o valor do Nome do Correntista");
         cb1._nomeCorrentista = Console.ReadLine();
         cb1._saldo = 0;
+        Console.WriteLine("Digite o valor o Valor do deposito");
+        cb1.Depositar(Convert.ToInt32(Console.ReadLine()));
+        Console.WriteLine("Digite o valor do saque");
+        cb1.Sacar(Convert.ToInt32(Console.ReadLine()));
+
+
+        Console.WriteLine();*/
+
     }
 }
