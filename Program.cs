@@ -30,12 +30,30 @@ public class Program
         }*/
 
         List<ContaBancaria> lista = new List<ContaBancaria>();
+        int cont = 1;
+
         while (true)
         {
             Console.WriteLine("Digite 1 para cadastrar nova conta e 2 para listar todas");
             int ops = Convert.ToInt32(Console.ReadLine());
             if(ops == 1)
             {
+                try
+                {
+                    ContaBancaria cb2 = new ContaBancaria();
+                    cb2.Depositar(-10);
+                    Console.WriteLine("Valor depositado!");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+                finally
+                {
+                    Console.WriteLine("Vai passar aqui de qualquer forma!");
+                }
+
+
                 ContaBancaria cb1 = new ContaBancaria();
                 Console.WriteLine("Digite o id");
                 cb1._id = Convert.ToInt32(Console.ReadLine());

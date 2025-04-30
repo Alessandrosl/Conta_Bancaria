@@ -9,6 +9,9 @@ public class ContaBancaria
     public string _nomeCorrentista;
     public double _saldo;
 
+    public ContaBancaria()
+
+
     public void Depositar(double valor)
     {
         if (valor >= 0)
@@ -17,7 +20,7 @@ public class ContaBancaria
         }
         else
         {
-            Console.WriteLine("Valor invalido");
+            throw new Exception("Valor invalido"); // lançar a exceção
         }
     }
 
