@@ -10,6 +10,21 @@ public class Program
     
     static void Main(string[] args)
     {
+        string cpf = "582.631.012 - 04";
+        cpf = cpf.Replace(".", "").Replace("-", ""); // como retirar o ponto e o traço
+        //int p = Convert.ToInt32(cpf[1].ToString()); //ConsoleModifiers vericar o que esta na posição
+
+        if (cpf.Length > 11)
+        {
+            int _cpf = Convert.ToInt32(cpf[1*(10),2*(9),3*(8),4*(7),5*(6),6*(5),7*(4),8*(3),9*(2),].ToString());
+            Console.WriteLine("Cpf Correto");
+        }
+        else 
+        {
+            Console.WriteLine("Cpf Incorreto");
+        }
+
+
         /*try
         {
             Console.WriteLine("Digite o primeiro numero");
@@ -27,7 +42,12 @@ public class Program
         catch (Exception ex)
         {
             Console.WriteLine("Ocorreu um erro!" + ex.Message);
-        }*/
+        }
+
+
+
+
+
 
         List<ContaBancaria> lista = new List<ContaBancaria>();
         int cont = 1;
@@ -42,7 +62,7 @@ public class Program
                 {
                     ContaBancaria cb2 = new ContaBancaria();
                     cb2.Depositar(-10);
-                    Console.WriteLine("Valor depositado!");
+                    Console.WriteLine("Valor depositado errado !!!");
                 }
                 catch (Exception ex)
                 {
@@ -74,9 +94,10 @@ public class Program
                 }
             }
         }
-               
-                
-        /*ContaBancaria cb1 = new ContaBancaria();
+
+
+
+        ContaBancaria cb1 = new ContaBancaria();
         Console.WriteLine("Digite o valor do id");
         cb1._id = Convert.ToInt32(Console.ReadLine());
         Console.WriteLine("Digite o valor do Agencia");
@@ -94,5 +115,10 @@ public class Program
 
         Console.WriteLine();*/
 
+
+        
+
     }
+    
+
 }

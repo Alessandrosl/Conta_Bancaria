@@ -3,14 +3,25 @@ using System;
 
 public class ContaBancaria
 {
-    public int _id;
-    public string _agencia;
-    public string _Nconta;
-    public string _nomeCorrentista;
-    public double _saldo;
+    private int _id;
+    private string _agencia;
+    private string _Nconta;
+    private string _nomeCorrentista;
+    private double _saldo;
 
     public ContaBancaria()
+    {
 
+    }
+
+    public ContaBancaria(int id, string agencia, string nconta, string nomeCorrentista, double saldo)
+    {
+        _id = id;
+        _agencia = agencia;
+        _Nconta = nconta;
+        _nomeCorrentista = nomeCorrentista;
+        _saldo = saldo;
+    }
 
     public void Depositar(double valor)
     {
@@ -36,5 +47,19 @@ public class ContaBancaria
         }
         
     }
-    
+    public void setSaldo(double valor)
+    {
+        if (_saldo > 0)
+        {
+            _saldo = valor;
+        }
+        else
+        {
+            throw new Exception("valor invalido !!!");
+        }
+    }
+    public double getSaldo()
+    {
+        return _saldo;
+    }
 }
